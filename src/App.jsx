@@ -1,15 +1,36 @@
 import './App.css'
 
 function App() {
-  const user = <div>
-  <h1>Aida</h1>
-  <h2>21</h2>
-  <h2>aida.nknjd@gmail.com</h2>
-  </div>
   return (
     <div>
-     {user}
+     <User name="Aida" age={21} email="aida.nknjd@gmail.com"/>
+     <User />
+     <User />
     </div>
+  )
+}
+
+const GetName = () => {
+  return "Aida"
+}
+//props 
+// const props = {
+//   name : "Aida",
+//   age : 21,
+//   email : "aida.nknjd@gmail.com"
+
+// }
+
+
+
+//component 
+const User = (props) =>{
+  return (
+    <div>
+  <h1>{props.name}</h1>
+  <h2>{props.age}</h2>
+  <h2>{props.email}</h2>
+  </div>
   )
 }
 
