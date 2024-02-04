@@ -5,6 +5,14 @@
   text-align: center;
 }
 
+.success {
+  background-color: green;
+}
+
+.warnning {
+  background-color: red;
+}
+
 .App {
   text-align: center;
   color: #ff0101;

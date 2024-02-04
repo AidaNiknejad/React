@@ -1,15 +1,18 @@
-import style from "./App.module.css"
-
+import "./App.css"
+import {useState} from 'react'
 function App() {
-  const age= 20;
-  if(age > 20) console.log("over age")
-  else console.log("under age")
 
-  age > 20 ? console.loge("over age") : console.log("under age")
-  return (
-    <div className="App">
-      AidaNiknejad
+  
+
+    
+  return <div className="App">
+      
+   <button onClick={()=>{ }}>Change Color</button>
+   <h1>Aida Niknejad</h1>
+
     </div>
-  )
-}
+      
+} 
 export default App;
+
+
