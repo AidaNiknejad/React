@@ -18,12 +18,9 @@ const course = {
   setCourseList( [...courseList , course]);
    console.log(courseList);
 }
-  const deleteCourse =(courseName)=>{
-    const newCourseList = courseList.filter((course)=>{
-      if(course === courseName) return false
-      else return true
-    })
-    setCourseList(newCourseList)
+  const deleteCourse =(courseId)=>{
+  
+    setCourseList(courseList.filter((course)=> courseId !== course.id))
   }
   return (
       <div className="App">
@@ -34,9 +31,9 @@ const course = {
         <div className="list">
           {courseList.map((course)=>{
             return (
-            <div>
+            <div key={course.id}>
               <h1>{course.courseName}</h1>
-              <button  onClick={() => deleteCourse(course)}>x</button>
+              <button  onClick={() => deleteCourse(course.id)}>x</button>
             </div>
             )
           })}
