@@ -3,24 +3,28 @@ import "./App.css";
 import Axios from "axios";
 
 function App() {
-  const [name, setName] = useState("");
-  const [predictedResult, setPredictedResult] = useState({});
-  const fetchAge = () => {
-    Axios.get(`https://api.agify.io/?name=${name}`).then((res) => {
-      console.log(res.data);
-      setPredictedResult(res.data);
-    });
+  const [generateExcuse, setGenerateExcuse] = useState("");
+  const [excuse, setExcuse] = useState("");
+  useEffect(() => {
+    fetchExcuse();
+  }, []);
+  const fetchExcuse = () => {
+    Axios.get(`https://excuser-three.vercel.app/v1/excuse/${excuse}
+    `).then(
+      (res) => {
+        console.log(res.data);
+        setGenerateExcuse(res.data[0].excuse);
+      }
+    );
   };
 
   return (
     <div className="App">
-      <input
-        placeholder="ex. Aida..."
-        onChange={(event) => setName(event.target.value)}
-      />
-      <button onClick={fetchAge}>Predict age</button>
-      <h1>age is : {predictedResult?.age}</h1>
-      <h1>name is : {predictedResult?.name}</h1>
+      <h1>Generate an excuse</h1>
+      <button onClick={() => fetchExcuse("Party")}>Party</button>
+      <button onClick={() => fetchExcuse("family")}>family</button>
+      <button onClick={() => fetchExcuse("office")}>office</button>
+      <p>{generateExcuse}</p>
     </div>
   );
 }
