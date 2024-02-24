@@ -4,6 +4,7 @@ import { Home } from "./pages/Home";
 import { Contact } from "./pages/Contact";
 import { About } from "./pages/About";
 import { Nav } from "./pages/Nav";
+import { Profile } from "./pages/Profile";
 function App() {
   return (
     <div className="App">
@@ -14,8 +15,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<div>Not found</div>} />
         </Routes>
+        <div>This is footer</div>
       </Router>
     </div>
   );
