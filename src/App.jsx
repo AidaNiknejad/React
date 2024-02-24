@@ -15,10 +15,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/profile/:name?" element={<Profile />} />
           <Route path="*" element={<div>Not found</div>} />
         </Routes>
-        <div>This is footer</div>
+        <div>This is Footer</div>
       </Router>
     </div>
   );
